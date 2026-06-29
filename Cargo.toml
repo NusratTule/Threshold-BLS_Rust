@@ -1,0 +1,22 @@
+[package]
+name    = "threshold-bls"
+version = "0.1.0"
+edition = "2021"
+description = "Threshold BLS12-381 signatures — Rust reference implementation"
+
+[[bin]]
+name = "benchmark"
+path = "src/bin/benchmark.rs"
+
+[dependencies]
+bls12_381 = { version = "0.8", features = ["experimental"] }
+ff        = "0.13"
+group     = "0.13"
+rand      = "0.8"
+sha2      = "0.9"
+
+[dev-dependencies]
+# nothing extra; integration tests use the lib directly
+
+[profile.release]
+opt-level = 3
